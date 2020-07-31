@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing firebase</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper container">
+          <a href="#!" class="brand-logo hide-on-med-and-down">YO!</a>
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-small-and-down">
+
+
+            <li><a href="index.html">Home</a></li>
+
+
+
+            <li class="logged-in hide">
+                <a class="modal-trigger waves-effect waves-light" href="#" data-target="modal-infos-compte-bottom">infos compte</a>
+            </li>
+            <li class="logged-out">
+                <a class="modal-trigger" href="#" data-target="modal-log-in">log in</a>
+            </li>
+            <li class="logged-out">
+                <a class="modal-trigger" href="#" data-target="modal-sign-in">sign in</a>
+            </li>
+            <li class="logged-in hide">
+                <a class="modal-trigger" href="#" data-target="modal-create-article">créer article</a>
+            </li>
+            <li class="logged-in hide">
+                <a class="" href="#" id="logout">log out</a>
+            </li>
+            
+            
+
+            
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav hide-on-med-and-up" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+
+
+        <li class="logged-in ">
+            <a class="modal-trigger" href="#" data-target="modal-infos-compte-bottom">infos compte</a>
+        </li>
+        <li class="logged-out">
+            <a class="modal-trigger" href="#" data-target="modal-log-in">log in</a>
+        </li>
+        <li class="logged-out">
+            <a class="modal-trigger" href="#" data-target="modal-sign-in">sign in</a>
+        </li>
+        <li class="logged-in hide">
+            <a class="modal-trigger" href="#" data-target="modal-create-article">créer article</a>
+        </li>
+        <li class="logged-in ">
+            <a class="" href="#" id="logout">log out</a>
+        </li>
+        
+        
+        
+      </ul>
+
+      <main class="main hide">
+          <div class="container">
+              <h2>welcom :: <span id="welcome-user"></span></h2>
+              
+            <h3>list users</h3>
+            <ul class="collapsible" id="list-users">
+            </ul>
+            <h3>list articles</h3>
+            <ul class="collapsible" id="list-articles">
+            </ul>
+          </div>
+
+      </main>
+
+
+    <!--modal sign in-->
+ 
+    <div id="modal-sign-in" class="modal">
+        <div class="modal-content">
+            <h4 class="uppercase">sign in</h4>
+            <form class="col s12" id="form-sign-in">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">child_care</i>
+                        <input id="name-id-sign-in" type="text" class="validate" />
+                        <label for="name-id-sign-in">name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="phone-id-sign-in" type="tel" class="validate" />
+                        <label for="phone-id-sign-in">phone</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email-id-sign-in" type="email" class="validate">
+                        <label for="email-id-sign-in">email</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">remove_red_eye</i>
+                        <input id="password-id-sign-in" type="password" class="validate">
+                        <label for="password-id-sign-in">password</label>
+                    </div>
+                </div>
+                
+                
+                <button class="btn" type="submit">sign in</button>
+                
+            </form>
+        </div>
+
+    </div>
+    
+    <!--modal log in-->
+ 
+    <div id="modal-log-in" class="modal">
+        <div class="modal-content">
+            <h4 class="uppercase">Log in</h4>
+            <form class="col s12" id="form-log-in">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email-id-log-in" type="email" class="validate" />
+                        <label for="email-id-log-in">email</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">remove_red_eye</i>
+                        <input id="password-id-log-in" type="password" class="validate" />
+                        <label for="password-id-log-in">password</label>
+                    </div>
+                </div>
+                
+                
+                    <button class="btn" type="submit">log in</button>
+               
+            </form>
+        </div>
+
+    </div>
+
+
+    <!--modal create article-->
+
+    <div id="modal-create-article" class="modal">
+        <div class="modal-content">
+            <h4 class="uppercase">create article</h4>
+            <form class="col s12" id="form-create-article">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">child_care</i>
+                        <input 
+                        id="titleArticle" 
+                        type="text" 
+                        class="validate"
+                         required
+                        />
+                        <label for="titleArticle">title article</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="contentArticle" class="materialize-textarea" data-length="130" required></textarea>
+                        <label for="contentArticle">your content</label>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="col s10">
+                        <button class="btn" type="submit">create article</button>
+                        <button class="btn red darken-5" type="reset">reset fields</button>
+                    </div>
+                    <div class="col s2">
+                        <button class="right modal-close btn red darken-5 waves-effect waves-green" >exit</button>
+                    </div>
+                    
+                </div>
+                
+            </form>
+        </div>
+
+    </div>
+
+
+    <!--modal infos compte-->
+ 
+    <div id="modal-infos-compte-bottom" class="modal bottom-sheet">
+        <div class="modal-content">
+        <h4 class="uppercase">Infos compte</h4>
+            <div class="collection" id="infos-user">
+               
+            </div>
+        </div>
+   
+    </div>
+
+
+
+
+    <footer>
+    </footer>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBLUnA_zqZohMQdu4SptL2wJXbQfkj-Vvo",
+            authDomain: "auth-56b26.firebaseapp.com",
+            databaseURL: "https://auth-56b26.firebaseio.com",
+            projectId: "auth-56b26",
+            storageBucket: "auth-56b26.appspot.com",
+          //   messagingSenderId: "557253775718",
+          //  appId: "1:557253775718:web:32177e577e3b2f320df8a7"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        //references auth and firestore
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        
+    </script>  
+    <script src="js/materialize.min.js"></script>
+    <script src="js/auth.js" ></script>
+    <script src="js/index.js" ></script>
+
+
+
+</body>
+</html>

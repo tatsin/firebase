@@ -1,0 +1,20 @@
+$primary-color:#26a69a;
+
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+
+nav{
+    .brand-logo{
+        color: #000 ;
+    }
+}
+
+
+
+@media #{$small-and-down} {
+    // styles for small screens and down
+  }
+  @media #{$medium-and-up} {
+    // styles for medium screens and larger
+  }
+
+
