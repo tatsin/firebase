@@ -168,6 +168,7 @@ auth.createUserWithEmailAndPassword(email,password)
 
         const modal = document.querySelector('#modal-sign-in');
         M.Modal.getInstance(modal).close();
+       
     })
     .catch(function(error) {
         //let errorCode = error.code;
